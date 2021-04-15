@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/seo-faq-schema-generator/static/css/main.8e502f8b.chunk.css",
+    "main.css": "/seo-faq-schema-generator/static/css/main.eee9736a.chunk.css",
     "main.js": "/seo-faq-schema-generator/static/js/main.ef3bf5a7.chunk.js",
     "main.js.map": "/seo-faq-schema-generator/static/js/main.ef3bf5a7.chunk.js.map",
     "runtime-main.js": "/seo-faq-schema-generator/static/js/runtime-main.540abb4b.js",
@@ -8,14 +8,14 @@
     "static/js/2.f97385af.chunk.js": "/seo-faq-schema-generator/static/js/2.f97385af.chunk.js",
     "static/js/2.f97385af.chunk.js.map": "/seo-faq-schema-generator/static/js/2.f97385af.chunk.js.map",
     "index.html": "/seo-faq-schema-generator/index.html",
-    "static/css/main.8e502f8b.chunk.css.map": "/seo-faq-schema-generator/static/css/main.8e502f8b.chunk.css.map",
+    "static/css/main.eee9736a.chunk.css.map": "/seo-faq-schema-generator/static/css/main.eee9736a.chunk.css.map",
     "static/js/2.f97385af.chunk.js.LICENSE.txt": "/seo-faq-schema-generator/static/js/2.f97385af.chunk.js.LICENSE.txt",
     "static/media/logo.6ce24c58.svg": "/seo-faq-schema-generator/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.540abb4b.js",
     "static/js/2.f97385af.chunk.js",
-    "static/css/main.8e502f8b.chunk.css",
+    "static/css/main.eee9736a.chunk.css",
     "static/js/main.ef3bf5a7.chunk.js"
   ]
 }
