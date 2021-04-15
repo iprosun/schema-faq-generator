@@ -89,7 +89,7 @@ export default function Home() {
     return (
         <div>
             <Typography variant="h3" component="h3">
-                SEO Scheme generator
+                SEO Schema generator
             </Typography>
             <hr />
             <Grid container spacing={3}>
@@ -97,8 +97,8 @@ export default function Home() {
                     <Paper className={classes.paper}>
                         <AppBar position="static">
                             <Tabs value={value} onChange={handleTabChange} aria-label="simple tabs example">
-                                <Tab label="Item One" {...a11yProps(0)} />
-                                <Tab label="Item Two" {...a11yProps(1)} />
+                                <Tab label="Builder" {...a11yProps(0)} />
+                                <Tab label="HTML" {...a11yProps(1)} />
                             </Tabs>
                         </AppBar>
                         <TextField
