@@ -21,22 +21,40 @@ const useStyles = makeStyles((theme) => ({
 export function Html(props) {
     const classes = useStyles();
     const [text, setText] = useState("");
-    const [qtype, setQtype] = useState("h2");
+    const [qtype, setQtype] = useState("h3");
     const { questions, setQuestions, updateJsonBody } = props;
 
     const generateHTML = (text) => {
-        const questionRegex = "<h3>(.|\n)*?<\/h3>";
-        const answerRegex = "<\/h3>(.|\n)*?<h3>";
-        text = text.replace(/(\r\n|\n|\r)/gm, "");
-        const questionsRes = [...text.matchAll(questionRegex)].map(el => { return el[0].replace(/<\/?h3>/g, ''); })
-        const answersRes = [...text.matchAll(answerRegex)].map(el => { return el[0].replace(/<\/?h3>/g, ''); })
         let newQuestions = []
-        questionsRes.forEach((el, indx) => {
-            newQuestions.push({
-                question: el,
-                answer: answersRes[indx]
+        if(qtype == "h3"){
+            text+="</h3>";
+            const questionRegex = "<h3>(.|\n)*?<\/h3>";
+            const answerRegex = "<\/h3>(.|\n)*?<h3>";
+            text = text.replace(/(\r\n|\n|\r)/gm, "");
+            const questionsRes = [...text.matchAll(questionRegex)].map(el => { return el[0].replace(/<\/?h3>/g, ''); })
+            const answersRes = [...text.matchAll(answerRegex)].map(el => { return el[0].replace(/<\/?h3>/g, ''); })
+            questionsRes.forEach((el, indx) => {
+                newQuestions.push({
+                    question: el,
+                    answer: answersRes[indx]
+                })
             })
-        })
+        }
+        else if(qtype == "p"){
+            text = text.replaceAll(/(\r\n|\n|\r)/gm, "");
+            text = text.replaceAll("?</p>", "?</p>\n");
+            const lines = text.split("\n");
+            const questionsRes = lines.filter(el => { return el.includes("?</p>")}).map( el => {return el.replace(/<\/?p>/g, '')});
+            const answersRes = lines.filter(el => { return !el.includes("?</p>")});
+            console.log(lines);
+            questionsRes.forEach((el, indx) => {
+                newQuestions.push({
+                    question: el,
+                    answer: answersRes[indx]
+                })
+            })
+        }
+        
         setQuestions(newQuestions);
         updateJsonBody(newQuestions);
     }
@@ -61,11 +79,11 @@ export function Html(props) {
                     onChange={(el) => { setQtype(el.target.value) }}
                     label="Question Element Type"
                 >
-                    <MenuItem value={"h2"}>{"<h2>"}</MenuItem>
+                    <MenuItem value={"h3"}>{"<h3>"}</MenuItem>
                     <MenuItem value={"p"}>{"<p>"}</MenuItem>
                 </Select>
             </FormControl>
-            <Button variant="contained" className={classes.button} color="primary" onClick={() => { generateHTML(text + "<h3>") }}>Generate</Button>
+            <Button variant="contained" className={classes.button} color="primary" onClick={() => { generateHTML(text) }}>Generate</Button>
 
         </div>
     )
