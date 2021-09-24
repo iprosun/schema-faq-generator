@@ -1,6 +1,6 @@
 {
   "name": "seo-schema-generator",
-  "hostname": "./",
+  "hostname": "seo-faq-schema-generator.herokuapp.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
