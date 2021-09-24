@@ -1,6 +1,6 @@
 {
   "name": "seo-schema-generator",
-  "hostname": "./",
+  "hostname": "./build/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
