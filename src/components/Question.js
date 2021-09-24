@@ -51,7 +51,7 @@ export function  Questions(props){
         <div>
             {questions.map((el, index) => {
                 return(
-                    <div className={classes.question}>
+                    <div key={index} className={classes.question}>
                         <TextField
                         key={"q_" + index}
                         id={"q_" + index}
@@ -61,7 +61,7 @@ export function  Questions(props){
                         onChange={(e)=>{
                             questions[index].question = e.target.value
                             setQuestions([...questions])
-                            props.updateJsonBody()
+                            props.updateJsonBody(questions)
                         }}
                         />
                         <TextField
@@ -73,7 +73,7 @@ export function  Questions(props){
                         onChange={(e)=>{
                             questions[index].answer = e.target.value
                             setQuestions([...questions])
-                            props.updateJsonBody()
+                            props.updateJsonBody(questions)
                         }}
                         />
                         <Button variant="contained" color="secondary" onClick={()=>{deleteQuestion(index)}} className={classes.removeBtn}>-</Button>
