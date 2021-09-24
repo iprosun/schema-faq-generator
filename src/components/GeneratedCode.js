@@ -22,7 +22,6 @@ export function GeneratedCode(props){
             <Highlight innerHTML={false}>{`<script type="application/ld+json">`}</Highlight>
             <JSONPretty className={classes.generatedCode}  theme={JSONPrettyMon} id="json-pretty" data={props.questions}></JSONPretty>
             <Highlight innerHTML={false}>{`</script>`}</Highlight>
-            
         </div>
         )
 }
