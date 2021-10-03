@@ -11,7 +11,7 @@
         margin:0;
         padding:0;
         font-family: 'arial', sans-serif;
-    
+
     }
     .t1-faq-list {
         list-style: none;
@@ -66,11 +66,15 @@
         line-height: 1.5;
         margin-top: 25px;
     }</style><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><script>
-        $(()=>{
-            $('.t1-faq-heading').click(function () {
-            $(this).parent('li').toggleClass('t1-the-active').find('.t1-faq-text').slideToggle();
-            });
-        })
-    </script><div class=""><ul class="t1-faq-list"><li><h3 class="t1-faq-heading"> sadasd</h3><p class="t1-read t1-faq-text">adasdasda</p></li><li class="t1-the-active"><h3 class="t1-faq-heading"> asdasd</h3><p class="t1-read t1-faq-text" style="display: block;">dasdadad</p></li><li><h3 class="t1-faq-heading"> dasdas</h3><p class="t1-read t1-faq-text">asdasd</p></li></ul></div>
+    $=jQuery
+    $(()=>{
+        $('.t1-faq-heading').click(function () {
+        $(this).parent('li').addClass('disable-temp');
+        
+        $(this).parent('li').toggleClass('t1-the-active').find('.t1-faq-text').slideToggle();
+        $(this).parent('li').removeClass('disable-temp');
+    });
+    })
+    </script><div class=""><ul class="t1-faq-list" style="color: rgb(0, 0, 0);"><li style="border-color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"><h3 class="t1-faq-heading"> asd</h3><p class="t1-read t1-faq-text">asd</p></li><li style="border-color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);"><h3 class="t1-faq-heading"> asd</h3><p class="t1-read t1-faq-text">asda</p></li></ul></div>
 </body>
 </html>

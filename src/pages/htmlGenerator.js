@@ -8,6 +8,8 @@ import { Questions } from "../components/Question"
 import { SettingsPannel } from "../components/SettingsPannel"
 import { GeneratedHTMLCode } from "../components/GeneratedHTMLCode"
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import defaultSettings from './defaultSettings'
+console.log(defaultSettings)
 
 
 function TabPanel(props) {
@@ -55,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Home() {
     const classes = useStyles();
     const [tabValue, setTabValue] = useState(0);
-    const [settings, setSettings] = useState({});
+    const [settings, setSettings] = useState(defaultSettings);
     const [HTMLCode, setHTMLCode] = useState("");
     const [questions, setQuestions] = useState([]);
     const [htmlBody, setHtmlBody] = useState("");
