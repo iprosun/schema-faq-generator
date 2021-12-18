@@ -59,7 +59,7 @@ export function  Questions(props){
                         value={el.question}
                         className={classes.input}
                         onChange={(e)=>{
-                            questions[index].question = e.target.value
+                            el.question = e.target.value
                             setQuestions([...questions])
                             props.updateJsonBody(questions)
                         }}
@@ -71,7 +71,7 @@ export function  Questions(props){
                         value={el.answer}
                         className={classes.input}
                         onChange={(e)=>{
-                            questions[index].answer = e.target.value
+                            el.answer = e.target.value
                             setQuestions([...questions])
                             props.updateJsonBody(questions)
                         }}

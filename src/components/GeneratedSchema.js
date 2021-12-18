@@ -14,11 +14,11 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export function GeneratedCode(props){
+export function GeneratedSchema(props){
     const classes = useStyles();
     return(
         <div className={classes.generatedCodeWrapper}>
-            <Highlight innerHTML={false}>{`<title>${props.title} - Frequently Asked Questions(FAQ)</title>`}</Highlight>
+            <Highlight in   nerHTML={false}>{`<title>${props.title}</title>`}</Highlight>
             <Highlight innerHTML={false}>{`<script type="application/ld+json">`}</Highlight>
             <JSONPretty className={classes.generatedCode}  theme={JSONPrettyMon} id="json-pretty" data={props.questions}></JSONPretty>
             <Highlight innerHTML={false}>{`</script>`}</Highlight>

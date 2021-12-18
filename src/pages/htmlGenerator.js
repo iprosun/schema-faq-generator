@@ -69,7 +69,7 @@ export default function Home() {
     return (
         <div>
             <Typography variant="h3" component="h3">
-                SEO FAQ Code generator
+                FAQ Code generator
             </Typography>
             <hr />
             <Grid container spacing={3}>

@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import PropTypes from 'prop-types'
 import Grid from '@material-ui/core/Grid'
 import { Questions } from "../components/Question"
-import { GeneratedCode } from '../components/GeneratedCode';
+import { GeneratedSchema } from '../components/GeneratedSchema';
 import { Html } from '../components/Html';
 
 const useStyles = makeStyles((theme) => ({
@@ -89,11 +89,11 @@ export default function Home() {
     return (
         <div>
             <Typography variant="h3" component="h3">
-                SEO Schema generator
+                FAQ Schema generator
             </Typography>
             <hr />
             <Grid container spacing={3}>
-                <Grid item md={6}>
+                <Grid item xs={12} md={6}>
                     <Paper className={classes.paper}>
                         <AppBar position="static">
                             <Tabs value={value} onChange={handleTabChange} aria-label="simple tabs example">
@@ -117,7 +117,7 @@ export default function Home() {
                     </Paper>
                 </Grid>
                 <Grid item md={6}>
-                    <GeneratedCode title={title} questions={jsonBody} />
+                    <GeneratedSchema title={title + ' - Frequently Asked Questions(FAQ)'} questions={jsonBody} />
                 </Grid>
             </Grid>
         </div>
