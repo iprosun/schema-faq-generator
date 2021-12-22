@@ -68,7 +68,7 @@ const jsonBodyStructure = {
     brand: "",
     model: "",
     description: "",
-    priceRange: "",
+    priceRange: "$$",
     review: [],
 };
 
@@ -80,7 +80,6 @@ export default function ReviewSchemaGenerator() {
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [reviews, setReviews] = useState([]);
-    const [price, setPrice] = useState([]);
     const [value, setValue] = useState(0);
     const classes = useStyles();
 
@@ -88,6 +87,7 @@ export default function ReviewSchemaGenerator() {
         setValue(newValue);
     };
     const [jsonBody, setJsonBody] = useState(jsonBodyStructure);
+
 
     const updateJsonStructure = (key, val, func) => {
         // Assign value to key  
@@ -162,15 +162,7 @@ export default function ReviewSchemaGenerator() {
                                 updateJsonStructure('description', v.target.value, setDescription);
                             }}
                         />
-                        <TextField
-                            id="page-title"
-                            label="Price"
-                            className={classes.wideInput}
-                            value={price}
-                            onChange={(v) => {
-                                updateJsonStructure('priceRange', v.target.value, setPrice);
-                            }}
-                        />
+                        
                         <TabPanel value={value} index={0}>
                             <Reviews
                                 reviews={reviews}
